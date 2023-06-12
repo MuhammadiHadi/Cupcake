@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.cupcake.ui.Fragment.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.cupcake.ui.Fragment.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_chooseFlavorFragment"
+            app:destination="@id/chooseFlavorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseFlavorFragment"
+        android:name="com.example.cupcake.ui.Fragment.ChooseFlavorFragment"
+        android:label="chooseFlavorFragment"
+        tools:layout="@layout/fragment_choose_flavor">
+        <action
+            android:id="@+id/action_chooseFlavorFragment_to_choosePickDateFragment"
+            app:destination="@id/choosePickDateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/choosePickDateFragment"
+        android:name="com.example.cupcake.ui.Fragment.ChoosePickupDateFragment"
+        android:label="choosePickDateFragment"
+        tools:layout="@layout/fragment_choose_pickup_date">
+        <action
+            android:id="@+id/action_choosePickDateFragment_to_orderSummaryFragment"
+            app:destination="@id/orderSummaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderSummaryFragment"
+        android:name="com.example.cupcake.ui.Fragment.OderSummaryFragment"
+        android:label="orderSummaryFragment"
+        tools:layout="@layout/fragment_oder_summary"/>
+
+
+</navigation>

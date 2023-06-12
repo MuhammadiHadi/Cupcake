@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- TODO: Update blank fragment layout -->
+   <LinearLayout
+       android:id="@+id/ll_one"
+       android:layout_marginTop="15dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintStart_toStartOf="parent"
+       android:orientation="vertical"
+       app:layout_constraintTop_toTopOf="parent">
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="QUANTITY"
+           android:textColor="@color/black"
+           android:textSize="18sp"/>
+       <TextView
+           android:id="@+id/tv_quantity"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="QUANTITY"
+           android:textSize="14sp"/>
+       <com.google.android.material.divider.MaterialDivider
+           android:layout_width="match_parent"
+           android:layout_marginTop="10dp"
+           android:layout_height="wrap_content"/>
+
+
+
+   </LinearLayout>
+   <LinearLayout
+       android:id="@+id/ll_two"
+       android:layout_marginTop="15dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintStart_toStartOf="parent"
+       android:orientation="vertical"
+       app:layout_constraintTop_toBottomOf="@+id/ll_one"
+       >
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="FLAVOR"
+           android:textColor="@color/black"
+           android:textSize="18sp"/>
+       <TextView
+           android:id="@+id/tv_flavor"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="QUANTITY"
+           android:textSize="14sp"/>
+       <com.google.android.material.divider.MaterialDivider
+           android:layout_width="match_parent"
+           android:layout_marginTop="10dp"
+           android:layout_height="wrap_content"/>
+
+
+
+   </LinearLayout>
+   <LinearLayout
+       android:id="@+id/ll_three"
+       android:layout_marginTop="15dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintStart_toStartOf="parent"
+       android:orientation="vertical"
+       app:layout_constraintTop_toBottomOf="@+id/ll_two"
+       >
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="PICK UP DATE"
+           android:textColor="@color/black"
+           android:textSize="18sp"/>
+       <TextView
+           android:id="@+id/tv_pickup"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="QUANTITY"
+           android:textSize="14sp"/>
+       <com.google.android.material.divider.MaterialDivider
+           android:layout_width="match_parent"
+           android:layout_marginTop="10dp"
+           android:layout_height="wrap_content"/>
+
+
+
+   </LinearLayout>
+    <TextView
+        android:id="@+id/tv_ropy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2434$"
+        app:layout_constraintTop_toBottomOf="@+id/ll_three"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="end"/>
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ropy"
+        android:layout_marginTop="8sp"
+        android:text="Submit order"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_cancel_two"
+        android:layout_width="match_parent"
+        android:text="cancel order"
+        android:backgroundTint="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@+id/btn_submit"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

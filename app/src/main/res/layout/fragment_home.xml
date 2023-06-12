@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp"
+    tools:context=".ui.Fragment.HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/tv_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="Order Cupcake"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_orderOne"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <Button
+        android:id="@+id/btn_orderOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ONE CUPCAKE"
+        android:backgroundTint="@android:color/holo_red_light"
+        app:layout_constraintBottom_toTopOf="@+id/btn_orderTwo"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order"
+        app:layout_constraintVertical_bias="0.5"
+         />
+
+    <Button
+        android:id="@+id/btn_orderTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Two CUPCAKE"
+        android:backgroundTint="@android:color/holo_red_light"
+        app:layout_constraintBottom_toTopOf="@+id/btn_orderMore"
+        app:layout_constraintTop_toBottomOf="@+id/btn_orderOne"
+        app:layout_constraintVertical_bias="0.5"
+       />
+
+    <Button
+        android:id="@+id/btn_orderMore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="twelve CUPCAKE"
+
+        android:backgroundTint="@android:color/holo_red_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_orderTwo"
+        app:layout_constraintVertical_bias="0.5"
+         />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
