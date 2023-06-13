@@ -15,7 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="25sp"
-
-        android:text="WELCOME!" />
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="CupCake!" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

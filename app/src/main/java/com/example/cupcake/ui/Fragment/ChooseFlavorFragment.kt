@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isNotEmpty
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -29,7 +31,12 @@ class ChooseFlavorFragment : Fragment() {
 
 
         binding.btnNext.setOnClickListener {
-            findNavController().navigate(R.id.action_chooseFlavorFragment_to_choosePickDateFragment)
+            if (binding.radioGroup.checkedRadioButtonId!=-1){
+                findNavController().navigate(R.id.action_chooseFlavorFragment_to_choosePickDateFragment)
+            }else{
+                Toast.makeText( requireContext(), "Select any flavor" , Toast.LENGTH_SHORT).show()
+            }
+
         }
       binding.btnCancel.setOnClickListener {
           findNavController().popBackStack()

@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -29,7 +30,10 @@ class ChoosePickupDateFragment: Fragment() {
         sharedViewModel= ViewModelProvider(requireActivity())[ShareViewModel::class.java]
         binding.apply {
             btnFrwd.setOnClickListener {
-                findNavController().navigate(R.id.action_choosePickDateFragment_to_orderSummaryFragment)
+                if(binding.rgRadio.checkedRadioButtonId!=-1){
+                findNavController().navigate(R.id.action_choosePickDateFragment_to_orderSummaryFragment)}else{
+                    Toast.makeText(requireContext() , "select ant Date" , Toast.LENGTH_SHORT).show()
+                }
             }
             btnBack.setOnClickListener {
                 findNavController().popBackStack()

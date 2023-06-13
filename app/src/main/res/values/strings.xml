@@ -6,4 +6,7 @@
     <string name="twelve_cupcake">twelve CUPCAKE</string>
     <string name="one_cupcake">ONE CUPCAKE</string>
     <string name="order_cupcake">Order Cupcake</string>
+    <string name="login_your_account">LOGIN YOUR <font color="#00FF00">ACCOUNT</font></string>
+    <string name="login">LOGIN</string>
+    <string name="don_t_have_account_signup">Don\'t have account? <font color="#0000FF">SignUp!</font></string>
 </resources>

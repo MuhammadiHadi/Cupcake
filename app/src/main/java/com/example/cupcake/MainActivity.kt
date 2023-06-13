@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
+        toolbar.setTitleTextColor(resources.getColor(R.color.white))
     }
     fun hideToolbar() {
         supportActionBar?.hide()
