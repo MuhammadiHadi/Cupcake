@@ -2,4 +2,8 @@
     <string name="app_name">Cupcake</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="six_cupcake">Six CUPCAKE</string>
+    <string name="twelve_cupcake">twelve CUPCAKE</string>
+    <string name="one_cupcake">ONE CUPCAKE</string>
+    <string name="order_cupcake">Order Cupcake</string>
 </resources>

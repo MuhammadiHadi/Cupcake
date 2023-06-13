@@ -41,7 +41,7 @@ class ChooseFlavorFragment : Fragment() {
             viewModel.updateValue(checkedId)
             viewModel.updateFlavor(checkedId)
         }
-       
+
 
         viewModel.priceText.observe(viewLifecycleOwner, Observer {
             binding.tvPrice.text=it.toString()
