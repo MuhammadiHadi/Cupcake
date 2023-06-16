@@ -12,12 +12,12 @@
         android:id="@+id/tv_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
         android:text="SignUp"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toTopOf="@+id/ed_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -47,6 +47,7 @@
             android:singleLine="true" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ed_email"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
@@ -70,6 +71,7 @@
             android:singleLine="true" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ed_password"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
@@ -80,7 +82,7 @@
         app:boxStrokeColor="@color/black"
         app:errorEnabled="true"
         app:helperTextEnabled="true"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/layout_field_mobile_no"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_email"
         app:layout_constraintVertical_bias="0.5"
@@ -94,26 +96,93 @@
             android:singleLine="true" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_field_mobile_no"
+        style="@style/textInputLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="@string/enter_mobile_no"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+
+        app:layout_constraintTop_toBottomOf="@+id/ed_password"
+        app:layout_constraintVertical_bias="0.5"
+        app:placeholderText="@string/enter_mobile_no"
+        app:prefixText="mobile_number"
+        app:prefixTextColor="@android:color/transparent"
+        tools:layout_editor_absoluteX="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/field_mobile_no"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:letterSpacing="-0.01"
+            android:inputType="number"
+            android:lineSpacingExtra="1sp"
+            android:maxLength="10" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:id="@+id/layout_mobile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/layout_field_mobile_no"
+        app:layout_constraintEnd_toEndOf="@id/layout_field_mobile_no"
+        app:layout_constraintStart_toStartOf="@id/layout_field_mobile_no"
+        app:layout_constraintTop_toTopOf="@+id/layout_field_mobile_no" />
+
+    <com.hbb20.CountryCodePicker
+        android:id="@+id/ccp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="7dp"
+        app:ccp_clickable="false"
+        app:ccp_defaultNameCode="PK"
+        app:ccp_showArrow="false"
+        app:ccp_showFlag="true"
+        app:layout_constraintBottom_toBottomOf="@id/layout_mobile"
+        app:layout_constraintStart_toStartOf="@+id/layout_mobile"
+        app:layout_constraintTop_toTopOf="@+id/layout_mobile"
+        app:layout_constraintVertical_bias="0.47" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:background="#DFDFDF"
+        android:elevation="100dp"
+        app:layout_constraintBottom_toBottomOf="@id/ccp"
+        app:layout_constraintStart_toEndOf="@id/ccp"
+        app:layout_constraintTop_toTopOf="@id/ccp" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="signup"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_password"
+        app:layout_constraintTop_toBottomOf="@+id/layout_field_mobile_no"
         app:layout_constraintVertical_bias="0.5" />
+
     <TextView
         android:id="@+id/btn_back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Back"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:textSize="16sp"
         android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/button"/>
+        android:text="Back"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.5"
+        tools:layout_editor_absoluteX="20dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

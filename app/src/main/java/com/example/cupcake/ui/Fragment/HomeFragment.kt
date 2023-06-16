@@ -42,6 +42,13 @@ class HomeFragment : Fragment() {
             }
         }
 
+        binding.viewProfile.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_userProfileFragment)
+        }
+
+     binding.viewgrap.setOnClickListener {
+         findNavController().navigate(R.id.action_homeFragment_to_viewGraphFragment)
+     }
 
         return binding.root
     }

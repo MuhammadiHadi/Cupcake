@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardViewRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@android:color/transparent">
+
+    <RelativeLayout
+        style="@style/Theme.CCP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_white_round"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/textView_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@+id/img_dismiss"
+                android:layout_toLeftOf="@+id/img_dismiss"
+                android:fontFamily="@font/roboto"
+                android:text="@string/select_country"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/secondary_text_light"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_dismiss"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:alpha="1"
+                android:clickable="true"
+                android:contentDescription="@string/dismiss_button_content_description"
+                android:focusable="true"
+                app:srcCompat="@drawable/ic_close" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_query_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_title"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/editText_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/img_clear_query"
+                android:layout_toLeftOf="@+id/img_clear_query"
+                android:hint="@string/search_hint"
+                android:imeOptions="actionSearch"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:textColor="@android:color/primary_text_light_nodisable" />
+
+            <ImageView
+                android:id="@+id/img_clear_query"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:alpha="0.7"
+                android:clickable="true"
+                android:contentDescription="@string/clear_search_button_content_description"
+                android:focusable="true"
+                android:padding="10dp"
+                app:srcCompat="@drawable/ic_backspace_black_24dp" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_countryDialog"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_below="@+id/rl_query_holder"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:dividerHeight="1dp"
+            tools:itemCount="10"
+            tools:listitem="@layout/layout_recycler_country_tile" />
+
+        <com.futuremind.recyclerviewfastscroll.FastScroller
+            android:id="@+id/fastscroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/recycler_countryDialog"
+            android:layout_alignEnd="@+id/recycler_countryDialog"
+            android:layout_alignRight="@+id/recycler_countryDialog"
+            android:layout_alignBottom="@+id/recycler_countryDialog"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/textView_noresult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_query_holder"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/no_result_found"
+            android:textColor="@android:color/primary_text_light"
+            android:visibility="gone" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/done_ccp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/recycler_countryDialog"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/btn_blue"
+            android:fontFamily="@font/roboto"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:letterSpacing="-0.03"
+            android:text="@string/done"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cornerRadius="15dp" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -57,5 +57,21 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_orderTwo"
         app:layout_constraintVertical_bias="0.5"
          />
+    <Button
+        android:id="@+id/viewProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="viewProfile"
+        app:layout_constraintTop_toBottomOf="@id/btn_orderMore"/>
+    <Button
+        android:id="@+id/viewgrap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="viewProfile"
+        app:layout_constraintTop_toBottomOf="@id/viewProfile"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

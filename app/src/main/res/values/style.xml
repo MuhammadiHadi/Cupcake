@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <style name="textInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomEnd">13dp</item>
+        <item name="boxCornerRadiusBottomStart">13dp</item>
+        <item name="boxCornerRadiusTopEnd">13dp</item>
+        <item name="boxCornerRadiusTopStart">13dp</item>
+        <item name="boxStrokeColor">@color/black</item>
+        <item name="boxStrokeWidth">0.6dp</item>
+        <item name="hintAnimationEnabled">true</item>
+        <item name="expandedHintEnabled">false</item>
+
+    </style>
+</resources>

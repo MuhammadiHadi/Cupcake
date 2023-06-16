@@ -18,6 +18,7 @@ class SignupFragment : Fragment() {
     private var  userName=""
     private var  userEmail=""
     private var  userPassword=""
+    private var  phone=""
     lateinit var sqliteHelper : SqliteHelper
 
     override fun onCreateView(
@@ -33,10 +34,12 @@ class SignupFragment : Fragment() {
             userName=binding.edUsername.text.toString().trim()
             userEmail=binding.email.text.toString().trim()
             userPassword=binding.password.text.toString().trim()
+            phone=binding.fieldMobileNo.text.toString().trim()
+
 
             if(userEmail.isNotEmpty()&& userName.isNotEmpty()&&userPassword.isNotEmpty()){
-
-                val userId = sqliteHelper.addUser(userName,userEmail,userPassword)
+                isPhone()
+                val userId = sqliteHelper.addUser(userName,userEmail,userPassword,phone)
                 if (userId != -1L) {
                     Toast.makeText(requireContext(), "User registered successfully", Toast.LENGTH_SHORT).show()
                 } else {
@@ -58,6 +61,10 @@ class SignupFragment : Fragment() {
     override fun onStop() {
         (activity as AppCompatActivity).supportActionBar!!.show()
         super.onStop()
+    }
+    private fun isPhone():Boolean{
+
+        return  phone.length==10 && phone[0]=='3'
     }
 
 
