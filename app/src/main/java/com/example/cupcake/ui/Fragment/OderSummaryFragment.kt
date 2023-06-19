@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.cupcake.MainActivity
+import com.example.cupcake.R
 import com.example.cupcake.databinding.FragmentHomeBinding
 import com.example.cupcake.databinding.FragmentOderSummaryBinding
 import com.example.cupcake.ui.ShareViewModel.ShareViewModel
@@ -26,7 +27,7 @@ class OderSummaryFragment : Fragment() {
         _binding= FragmentOderSummaryBinding.inflate(inflater,container,false)
         viewModel=ViewModelProvider(requireActivity()).get(ShareViewModel::class.java)
         binding.btnSubmit.setOnClickListener {
-            Toast.makeText(requireContext() , "Order Submit successfully" , Toast.LENGTH_SHORT).show()
+           findNavController().navigate(R.id.action_orderSummaryFragment_to_cardMethodFragment)
         }
         binding.btnCancelTwo.setOnClickListener {
             findNavController().popBackStack()

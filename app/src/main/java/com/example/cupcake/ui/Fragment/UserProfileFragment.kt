@@ -1,29 +1,25 @@
 package com.example.cupcake.ui.Fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.cupcake.R
 import com.example.cupcake.SQLite.SqliteHelper
 import com.example.cupcake.Utils.SessionManager
 import com.example.cupcake.databinding.FragmentUserProfileBinding
+import com.example.cupcake.ui.base.BaseFragment
 
-class UserProfileFragment : Fragment() {
-    private  var _binding: FragmentUserProfileBinding?=null
-    private val binding get()=_binding!!
-
+class UserProfileFragment : BaseFragment<FragmentUserProfileBinding>(R.layout.fragment_user_profile) {
     lateinit var sqliteHelper : SqliteHelper
     lateinit var sessionManager : SessionManager
-    override fun onCreateView(
-        inflater : LayoutInflater , container : ViewGroup? ,
-        savedInstanceState : Bundle? ,
-    ) : View {
-        _binding= FragmentUserProfileBinding.inflate(inflater,container,false)
-       sqliteHelper= SqliteHelper(requireContext())
+
+    override fun onViewCreated(view : View , savedInstanceState : Bundle?) {
+        super.onViewCreated(view , savedInstanceState)
+
+    }
+    override fun setContentToView(binding : FragmentUserProfileBinding) {
+        sqliteHelper= SqliteHelper(requireContext())
         sessionManager=SessionManager(requireContext())
 
 
@@ -45,8 +41,5 @@ class UserProfileFragment : Fragment() {
         binding.btnUpdate.setOnClickListener {
             findNavController().navigate(R.id.action_userProfileFragment_to_updateFragment)
         }
-        return binding.root
     }
-
-
 }

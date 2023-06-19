@@ -1,24 +1,45 @@
 package com.example.cupcake.ui.Fragment
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+
+import android.annotation.SuppressLint
+import android.os.CountDownTimer
 import com.example.cupcake.R
+import com.example.cupcake.Utils.Constants.OTP_FORMAT
+import com.example.cupcake.Utils.millisToTime
 import com.example.cupcake.databinding.FragmentCardMethodBinding
+import com.example.cupcake.ui.base.BaseFragment
 
-class CardMethodFragment : Fragment() {
-  private var _binding:FragmentCardMethodBinding?=null
-    private val binding get() = _binding!!
+class CardMethodFragment : BaseFragment<FragmentCardMethodBinding>(R.layout.fragment_card_method) {
 
-    override fun onCreateView(
-        inflater : LayoutInflater , container : ViewGroup? ,
-        savedInstanceState : Bundle? ,
-    ) : View? {
-        _binding=FragmentCardMethodBinding.inflate(inflater,container,false)
+    override fun setContentToView(binding : FragmentCardMethodBinding) {
+        startTimer(120000)
+        binding.apply {
+            tvResend.setOnClickListener {
+                startTimer(120000)
+            }
 
-        return binding.root
+        }
+
+
+
+    }
+    private var cTimer: CountDownTimer? = null
+    private fun startTimer(time: Long) {
+        binding.tvResend.isClickable = false
+        cTimer = object : CountDownTimer(time, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                binding.tvResend.text = millisToTime(OTP_FORMAT, millisUntilFinished)
+            }
+
+            @SuppressLint("SetTextI18n")
+            override fun onFinish() {
+                binding.tvResend.apply {
+                    isClickable = true
+                    text = "Resent"
+                }
+            }
+        }
+        (cTimer as CountDownTimer).start()
     }
 
 }
