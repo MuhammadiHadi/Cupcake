@@ -118,5 +118,13 @@
         android:backgroundTint="@android:color/darker_gray"
         app:layout_constraintTop_toBottomOf="@+id/btn_submit"
         android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/ed_text"
+        android:layout_width="match_parent"
+        android:hint="enter value"
+        android:inputType="number"
+        android:maxLength="10"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cancel_two"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,4 +13,5 @@
         <item name="android:statusBarColor">@android:color/holo_red_light</item>
         <!-- Customize your theme here. -->
     </style>
+
 </resources>
