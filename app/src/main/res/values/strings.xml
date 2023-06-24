@@ -16,6 +16,8 @@
     <string name="date_of_birth">date_of_birth</string>
     <string name="submit">submit</string>
     <string name="textview">textview</string>
+    <string name="title">Title</string>
+    <string name="dec">Dec</string>
     <string-array name="list">
         <item>A</item>
         <item>B</item>

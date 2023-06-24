@@ -99,7 +99,16 @@
         android:id="@+id/cardMethodFragment"
         android:name="com.example.cupcake.ui.Fragment.CardMethodFragment"
         android:label="cardMethodFragment"
-        tools:layout="@layout/fragment_card_method"/>
+        tools:layout="@layout/fragment_card_method">
+        <action
+            android:id="@+id/action_cardMethodFragment_to_complaintFragment"
+            app:destination="@id/complaintFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/complaintFragment"
+        android:name="com.example.cupcake.ui.Fragment.ComplaintsFragment"
+        android:label="complaintFragment"
+        tools:layout="@layout/fragment_complaints"/>
 
 
 </navigation>

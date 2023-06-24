@@ -12,9 +12,11 @@ import android.text.SpannableStringBuilder
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.CheckBox
 import android.widget.DatePicker
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.navigation.fragment.findNavController
 import com.example.cupcake.R
 import com.example.cupcake.Utils.Constants.OTP_FORMAT
 import com.example.cupcake.Utils.millisToTime
@@ -27,7 +29,7 @@ import java.util.*
 class CardMethodFragment : BaseFragment<FragmentCardMethodBinding>(R.layout.fragment_card_method) {
 
     val cal = Calendar.getInstance()
-    lateinit var DateValue :Editable
+    private var isCheck:Boolean = false
 
 
     @SuppressLint("ResourceType")
@@ -37,6 +39,9 @@ class CardMethodFragment : BaseFragment<FragmentCardMethodBinding>(R.layout.frag
         startTimer(120000)
         binding.apply {
 
+
+
+
             tvBundle.text=arguments?.getString("hadi").toString()
 
 
@@ -44,6 +49,14 @@ class CardMethodFragment : BaseFragment<FragmentCardMethodBinding>(R.layout.frag
                 startTimer(120000)
             }
             binding.btnSelect.setOnClickListener {
+                if(checkbox.isChecked){
+                    isCheck=true
+                    Toast.makeText(requireContext() , isCheck.toString() , Toast.LENGTH_SHORT).show()
+
+                }else{
+                    Toast.makeText(requireContext() , isCheck.toString() , Toast.LENGTH_SHORT).show()
+                }
+                findNavController().navigate(R.id.action_cardMethodFragment_to_complaintFragment)
                 Toast.makeText(requireContext() , binding.fieldDob.text.toString() , Toast.LENGTH_SHORT).show()
             }
             isEmail(cardEditText.text.toString())
