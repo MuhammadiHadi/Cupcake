@@ -122,7 +122,8 @@ class LoginFragment : Fragment() {
             }
         }
 
-    }     private fun isEmail(email: String?): Boolean {
+    }
+    private fun isEmail(email: String?): Boolean {
                 email?.let {
                     val pattern: Pattern
                     val EMAIL_PATTERN =
